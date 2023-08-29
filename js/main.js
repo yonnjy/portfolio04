@@ -16,6 +16,17 @@ $(function () {
         fade: true,
     });
 
+    $('.header .btn_ham').on('click', function () {
+        $('.gnb').toggleClass('on');
+    });
+
+    $('.gnb>ul>li').on('click', function(e){
+        e.preventDefault();
+
+        let idx = $(this).index();
+        $(this).find('.sub').eq(idx).addClass('on').siblings().removeClass('on');
+    });
+
     $('.main_vi .arrows .up').on('click', function () {
         $('.main_slide').slick('slickPrev');
     });
