@@ -34,21 +34,21 @@ $(function () {
         $('.main_slide').slick('slickNext');
     });
 
-    $('.cam_wrap').slick({
-        arrows: false,
-        infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
+    // $('.cam_wrap').slick({
+    //     arrows: false,
+    //     infinite: true,
+    //     slidesToShow: 4,
+    //     slidesToScroll: 4,
+    //     responsive: [
+    //         {
+    //             breakpoint: 768,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 slidesToScroll: 1,
+    //             }
+    //         }
+    //     ]
+    // });
 
     $('.main_cam .arrows .left').on('click', function () {
         $('.cam_wrap').slick('slickPrev');
