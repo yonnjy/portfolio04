@@ -93,6 +93,23 @@ $(function () {
             .siblings().removeClass('on');
     });
 
+    $('.cam_slide').slick({
+        arrows: false,
+        dots: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
     $('.fund_site span').on('click', function () {
         $(this).toggleClass('on');
         $(this).next().toggleClass('on');
@@ -104,5 +121,21 @@ $(function () {
 
     $('.btn_top').on('click', function () {
         $('html, body').animate({ scrollTop: 0 }, 500);
+    });
+
+    $(window).on('resize', function () {
+        $('.gnb').removeClass('on');
+    });
+
+    $('.header').on('wheel', function (e) {
+        if ($('.gnb').hasClass('on')) {
+            e.preventDefault();
+        }
+    });
+
+    $('.btn_ham').on('wheel', function (e) {
+        if ($('.gnb').hasClass('on')) {
+            e.preventDefault();
+        }
     });
 });
