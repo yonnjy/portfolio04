@@ -34,29 +34,6 @@ $(function () {
         $('.main_slide').slick('slickNext');
     });
 
-    // $('.cam_wrap').slick({
-    //     arrows: false,
-    //     infinite: true,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 4,
-    //     responsive: [
-    //         {
-    //             breakpoint: 768,
-    //             settings: {
-    //                 slidesToShow: 1,
-    //                 slidesToScroll: 1,
-    //             }
-    //         }
-    //     ]
-    // });
-
-    $('.main_cam .arrows .left').on('click', function () {
-        $('.cam_wrap').slick('slickPrev');
-    });
-    $('.main_cam .arrows .right').on('click', function () {
-        $('.cam_wrap').slick('slickNext');
-    });
-
     $('.main_biz .count_num').each(function(){
         var $this = $(this),
         countTo = $this.attr('data-count');
@@ -81,7 +58,7 @@ $(function () {
         $(this).addClass('on').siblings().removeClass('on');
     });
 
-    $('.tap_list li').on('click', function (e) {
+    $('.menu li').on('click', function (e) {
         e.preventDefault();
 
         let idx = $(this).index();
@@ -89,13 +66,40 @@ $(function () {
         $(this).addClass('on')
             .siblings().removeClass('on');
 
-        $('.cam_slide').eq(idx).addClass('on')
+        $('.con_list .con').eq(idx).addClass('on')
             .siblings().removeClass('on');
     });
 
-    $('.cam_slide').slick({
+    $('.menu li').on("click", function() {
+        $('.cam_slide01').css('display', 'block'); 
+        $('.cam_slide01').slick('setPosition');
+        $('.cam_slide02').css('display', 'block'); 
+        $('.cam_slide02').slick('setPosition');
+        $('.cam_slide03').css('display', 'block'); 
+        $('.cam_slide03').slick('setPosition');
+        $('.cam_slide04').css('display', 'block'); 
+        $('.cam_slide04').slick('setPosition');
+    });
+
+    $('.cam_slide01').slick({
         arrows: false,
-        dots: true,
+        dots: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
+    $('.cam_slide02').slick({
+        arrows: false,
+        dots: false,
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -108,6 +112,63 @@ $(function () {
                 }
             }
         ]
+    });
+
+    $('.cam_slide03').slick({
+        arrows: false,
+        dots: false,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+    $('.cam_slide04').slick({
+        arrows: false,
+        dots: false,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
+    });
+
+    $('.main_cam .cam01 .left').on('click', function () {
+        $('.cam_slide01').slick('slickPrev');
+    });
+    $('.main_cam .cam01 .right').on('click', function () {
+        $('.cam_slide01').slick('slickNext');
+    });
+    $('.main_cam .cam02 .left').on('click', function () {
+        $('.cam_slide02').slick('slickPrev');
+    });
+    $('.main_cam .cam02 .right').on('click', function () {
+        $('.cam_slide02').slick('slickNext');
+    });
+    $('.main_cam .cam03 .left').on('click', function () {
+        $('.cam_slide03').slick('slickPrev');
+    });
+    $('.main_cam .cam03 .right').on('click', function () {
+        $('.cam_slide03').slick('slickNext');
+    });
+    $('.main_cam .cam04 .left').on('click', function () {
+        $('.cam_slide04').slick('slickPrev');
+    });
+    $('.main_cam .cam04 .right').on('click', function () {
+        $('.cam_slide04').slick('slickNext');
     });
 
     $('.fund_site span').on('click', function () {
