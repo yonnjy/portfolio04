@@ -1110,7 +1110,7 @@
 
 .main_cam .arrows {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, 0);
     max-width: 1500px;
@@ -1244,7 +1244,7 @@
     
     .main_cam .arrows {
         position: absolute;
-        top: 60%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, 0);
         max-width: 1500px;
